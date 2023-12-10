@@ -1,0 +1,64 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package caida.libre;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author 
+ */
+public class CaidaLibre {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+        //vi=0
+        //Formula h=vi*t+g*t^2/2
+        Scanner input= new Scanner (System.in);
+        int vf;
+        double g=9.8,t,t1,t2,h1,h2,h3,h4,h5,vf1,vf2,vf3;
+        System.out.println("Introduzca el tiempo de caída en segundos");
+        t=input.nextDouble();
+        h1= 0*(t/60)+(g*(Math.pow(t,2))/2);
+        System.out.println("La altura es: "+h1+" m");
+        System.out.println("----------------------");
+        //Formula h=vf^2-vi^2/2g
+        System.out.println("Introduzca la velocidad final en m/s");
+        vf=input.nextInt();
+        h2=(Math.pow(vf,2))/(2*g);
+        System.out.println("La altura es: "+h2+" m");
+        System.out.println("----------------------");
+        //Formula h=vf-vi/2*t
+        h3=((vf)/(2))*t;
+        System.out.println("La altura es: "+h3+" m");
+        System.out.println("----------------------");
+        //Formula vf=vi+g*t
+        vf1=g*t;
+        System.out.println("La velocidad final es: "+vf1+" m/s");
+        System.out.println("----------------------");
+        //Formula vf^2=vi^2+2(g*h)
+        System.out.println("Introduzca una altura");
+        h4=input.nextDouble();
+        vf2=2*(g*h4);
+        System.out.println("La velocidad final(vf^2) es: "+vf2+" m/s");
+         System.out.println("----------------------");
+        //Formula t=raíz cuadrada(2h/g)
+        System.out.println("Introduzca una altura");
+        h5=input.nextDouble();
+        t1=Math.sqrt((2*h5)/9);
+        System.out.println("El tiempo es: "+t1+" s");
+         System.out.println("----------------------");
+        //Formula t=vf/g
+        System.out.println("Introduzca la velocidad final");
+        vf3=input.nextDouble();
+        t2=vf3/g;
+        System.out.println("El tiempo es: "+t2+" s");
+    }
+    
+}
